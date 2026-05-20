@@ -9,8 +9,12 @@ alunos = [
     },
     {
     "Nome": "Lucas",
-    "Nota": [4.6, 2.9, 5.3]
-    }
+    "Nota": [4.6, 2.9, 5.3],
+    },
+    {
+    "Nome": "Teste",
+    "Nota": [5.6, 5.6, 5.6],
+    },
 ]
 
 def calcular_media(notas):
@@ -23,7 +27,9 @@ def calcular_media(notas):
     Returns:
         float: Média das notas arredondadas para duas casas decimais.
     """
-    media = sum(notas) / len("Nota")
+    if len(notas) == 0:
+        return 0
+    media = sum(notas) / len(notas)
     return round(media, 2)
 
 def verificar_aprovacao(media, media_minima=7.0):
@@ -37,11 +43,9 @@ def verificar_aprovacao(media, media_minima=7.0):
     Returns
         str: Retorna "Aprovado" ou "Reprovado" dependendo da média do aluno.
     """
-    aprovacao = "Reprovado"
-    if media >= media_minima:
-        aprovacao = "Aprovado"
-    else:
-        return aprovacao
+    if media < media_minima:
+        return "Reprovado"
+    return "Aprovado"
 
 def gerar_relatorio(alunos): 
     """
