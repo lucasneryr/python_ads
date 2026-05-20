@@ -7,6 +7,7 @@ alunos = [
     "Nome": "Bruno",
     "Nota": [7.2, 4.8, 7.5],
     },
+    {
     "Nome": "Lucas",
     "Nota": [4.6, 2.9, 5.3]
     }
